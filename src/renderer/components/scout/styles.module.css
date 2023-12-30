@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 4px 0;
+
+  &:hover {
+    background-color: #050C0F;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+}

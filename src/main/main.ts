@@ -12,6 +12,7 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import Store from 'electron-store';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 
@@ -61,6 +62,8 @@ const createWindow = async () => {
     await installExtensions();
   }
 
+  Store.initRenderer();
+
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
     : path.join(__dirname, '../../assets');
@@ -71,10 +74,11 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: 1600,
+    height: 900,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      webSecurity: false,
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
@@ -97,6 +101,23 @@ const createWindow = async () => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  // mainWindow.webContents.session.webRequest.onBeforeSendHeaders(
+  //   (details, callback) => {
+  //     callback({ requestHeaders: { Origin: '*', ...details.requestHeaders } });
+  //   },
+  // );
+
+  // mainWindow.webContents.session.webRequest.onHeadersReceived(
+  //   (details, callback) => {
+  //     callback({
+  //       responseHeaders: {
+  //         'Access-Control-Allow-Origin': ['*'],
+  //         ...details.responseHeaders,
+  //       },
+  //     });
+  //   },
+  // );
 
   const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();

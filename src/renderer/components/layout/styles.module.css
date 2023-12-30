@@ -1,0 +1,51 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navbarOuter {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #122C35;
+}
+
+.navbarInner {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #050C0F;
+  border-bottom: 1px solid #cdcecf;
+}
+
+.spacer {
+  width: 100vw;
+  height: 80px;
+}
+
+.item {
+  color: #cdcecf;
+}
+
+.content {
+  width: 80vw;
+  margin: 0 auto;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
+
+.header {
+  margin: 20px 0;
+  text-transform: capitalize;
+  font-size: 24px;
+}

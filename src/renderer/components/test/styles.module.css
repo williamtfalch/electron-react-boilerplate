@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.logs {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [col] 20% [col] 20% [col] 30% [col] 30%;
+  grid-template-rows: [row] auto [row] auto [row] auto [row];
+}
+
+.item {
+  grid-row: row;
+}

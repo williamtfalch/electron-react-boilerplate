@@ -1,49 +1,32 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  MemoryRouter as Router,
+  RouterProvider,
+  Routes,
+} from 'react-router-dom';
 import './App.css';
-
-function Hello() {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-}
+import { Logs } from './components/logs/logs';
+import { HistoricalLogs } from './components/historicalLogs/historicalLogs';
+import { Layout } from './components/layout/layout';
+import { Seeding } from './components/seeding/seeding';
+import { Scout } from './components/scout/scout';
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Hello />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HistoricalLogs />} />
+          <Route path="Klick3R" element={<HistoricalLogs />} />
+          {
+            //<Route path="seeding" element={<Seeding />} />
+          }
+          <Route path="scout" element={<Scout />} />
+        </Route>
       </Routes>
     </Router>
   );

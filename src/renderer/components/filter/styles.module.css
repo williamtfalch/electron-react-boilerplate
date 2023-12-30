@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input {
+  width: 100px;
+  height: 38px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #050C0F;
+  border: 1px solid #cdcecf;
+  color: #cdcecf;
+  font-size: 16px;
+
+  &::placeholder {
+    color: #cdcecf;
+    opacity: 0.5;
+  }
+}
+
+.list {
+  position: absolute;
+  border-radius: 8px;
+  top: 60px;
+  flex-direction: column;
+  background-color: #050C0F;
+  border: 1px solid #cdcecf;
+  z-index: 1;
+  max-height: 160px;
+}
+
+.item {
+  display: block;
+  line-height: 40px;
+  padding: 0 10px;
+  border-radius: 8px;
+  width: inherit;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover, &.selected {
+    background-color: #363c3e;
+  }
+
+  &:active {
+    background-color: #1d2426;
+  }
+}

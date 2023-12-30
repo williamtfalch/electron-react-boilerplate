@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.logs {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  line-height: 30px;
+
+  > span:nth-of-type(2) {
+    width: 200px;
+  }
+}
+
+.copy {
+  height: 23px;
+  cursor: pointer;
+}
+
+.illegalWeapon {
+  color: red;
+}
+

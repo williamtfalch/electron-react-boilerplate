@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 38px;
+  background-color: #050C0F;
+  border: 1px solid #cdcecf;
+  color: #cdcecf;
+  border-radius: 8px;
+}
+
+.option {
+  width: 38px;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #363c3e;
+  }
+}
+
+
+
+.selected {
+  background-color: #363c3e;
+}
